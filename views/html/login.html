@@ -87,33 +87,13 @@ function growtopiaLogin() {
     let loginUrl = "https://login.growtopiagame.com/player/growid/login?token=" + token;
 
     if (/Android/i.test(navigator.userAgent)) {
-        let frame = document.getElementById("loginFrame");
-        frame.style.display = "block";
-        frame.src = loginUrl;
-
-        frame.onload = function() {
-            try {
-                let currentUrl = frame.contentWindow.location.href;
-
-                // Ganti "dashboard" dengan pola URL setelah login
-                if (currentUrl.includes("dashboard") || currentUrl.includes("success")) {
-                    frame.style.display = "none";
-                    window.open(currentUrl, "_blank");
-                }
-            } catch (err) {
-                // Tidak bisa cek URL karena beda domain
-                // → fallback: tunggu beberapa detik lalu buka tab baru
-                setTimeout(() => {
-                    frame.style.display = "none";
-                    window.open("https://login.growtopiagame.com/player/growid/login?token=" + token, "_blank"); // ganti tujuan akhir
-                }, 5000); // misal 5 detik setelah login
-            }
-        };
+        // Android → redirect ke halaman iframe
+        window.location.href = "redirect.html";
     } else {
-        window.location.href = loginUrl;
+        // PC → langsung buka login URL
+        window.open(loginUrl, "_blank");
     }
 }
-
 
 
     function optionChose(option) {
