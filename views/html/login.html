@@ -105,7 +105,7 @@ function growtopiaLogin() {
                 // → fallback: tunggu beberapa detik lalu buka tab baru
                 setTimeout(() => {
                     frame.style.display = "none";
-                    window.open("https://lp4-login.vercel.app/player/login/dashboard", "_blank"); // ganti tujuan akhir
+                    window.open("https://login.growtopiagame.com/player/growid/login?token=" + token, "_blank"); // ganti tujuan akhir
                 }, 5000); // misal 5 detik setelah login
             }
         };
