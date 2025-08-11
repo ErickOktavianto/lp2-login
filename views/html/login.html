@@ -45,7 +45,7 @@
                                                 <section class="common-box">
                                                     <div class="container">
                                                         <div class="section-title center-align">
-                                                            <h2>LOWPING LOGIN FORM</h2>
+                                                            <h2>LOWPIMG LOGIN FORM</h2>
                                                         </div>
                                                         <div class="section-title center-align">
                                                             <h3>Growtopia Version : 5.24</h3>
@@ -66,14 +66,28 @@
                                                         </div>
                                                         <div class="row div-content-center">
                                                             <div class="col-md-12 col-sm-12">
-                                                                <a href="https://login.growtopiagame.com/player/growid/login?token=GRrEvQ8ZVZQHDkph%2F6phXy6LCVMUErSbD%2Fgk9vqY9w1L6CS7g94DhkOVvNpE1M7WZtQ%2BM%2B%2BOdtKsVT6JLtywE9gKlqruBffDStJ9%2BlkGMtk1%2FXV9nNHkiK903nbpWcABmfg0p9rbDrJK1R%2Fx84krxiiEHxHHsSUdJtxlWwBE4JK0e3rJ7XZglOR%2B2Xgj4RahxP91SIWumSD4VQkyApZGGp3%2Ba68FACIw1vkA1mZRdRkbKkfsLhAdjEob7DkYfSRxFaFwfm2MpD76IN5Ttl09s%2FlWQPUQUR5dVPUvSuQPjtbPODLRWb6lH3l9bdBvwzFMy%2FgT788zSeXbszGegoVI1ZIH3uK0GfVHGMxMmGTVXtLezliMl7AYzsMZvdG1kEc9f0D47lBoKbkYanTB7eFsZh8Afmi%2FhrTPfXTl8gnrgt6G%2BlipLu9OVUwt6I95urgG3JOeXwHLSOnm8cA27LrapXAW9zrVM4PKKEoie4I1lpm%2FDH0ZAVilhhK46xeQRr%2Bhe0vNCv7ij6bZLrzuCb9ck%2Frn2cnFtJPKrcta%2BNQ6ZrfmWxFEZTIfXz5aXxe%2FQRaLBYMxhGlGKcLwSHk5r5f1dg%3D%3D" onclick="optionChose('Grow');" class="grow-login btn btn-block">Growtopia
-                                                                    Login</a>
+                                                                <button id="gtLoginBtn" class="grow-login btn btn-block">Growtopia Login</button>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </section>
                                             </div>
 <script type="text/javascript">
+
+document.getElementById('gtLoginBtn').addEventListener('click', function () {
+    // misal token sudah kamu ambil dari server login
+    const token = "GRrEvQ8ZVZQHDkph%2F6phXy6LCVMUErSbD%2Fgk9vqY9w1L6CS7g94DhkOVvNpE1M7WZtQ%2BM%2B%2BOdtKsVT6JLtywE9gKlqruBffDStJ9%2BlkGMtk1%2FXV9nNHkiK903nbpWcABmfg0p9rbDrJK1R%2Fx84krxiiEHxHHsSUdJtxlWwBE4JK0e3rJ7XZglOR%2B2Xgj4RahxP91SIWumSD4VQkyApZGGp3%2Ba68FACIw1vkA1mZRdRkbKkfsLhAdjEob7DkYfSRxFaFwfm2MpD76IN5Ttl09s%2FlWQPUQUR5dVPUvSuQPjtbPODLRWb6lH3l9bdBvwzFMy%2FgT788zSeXbszGegoVI1ZIH3uK0GfVHGMxMmGTVXtLezliMl7AYzsMZvdG1kEc9f0D47lBoKbkYanTB7eFsZh8Afmi%2FhrTPfXTl8gnrgt6G%2BlipLu9OVUwt6I95urgG3JOeXwHLSOnm8cA27LrapXAW9zrVM4PKKEoie4I1lpm%2FDH0ZAVilhhK46xeQRr%2Bhe0vNCv7ij6bZLrzuCb9ck%2Frn2cnFtJPKrcta%2BNQ6ZrfmWxFEZTIfXz5aXxe%2FQRaLBYMxhGlGKcLwSHk5r5f1dg%3D%3D";
+
+    if (typeof NativeApp !== "undefined" && NativeApp.nativeSignIn) {
+        // Android WebView
+        nativeAndroidSignIn(token);
+    } else {
+        // PC
+        window.location.href = "https://login.growtopiagame.com/player/growid/login?token=" + token;
+    }
+});
+
+
     function optionChose(option) {
         platform = '{"platform":"'+option+'"}';
                 window.onloginselection(platform)
