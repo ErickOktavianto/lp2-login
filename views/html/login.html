@@ -28,7 +28,7 @@
             color: red;
             animation: blink 2s ease-in-out infinite;
         }
-        .disabled-link{
+        /* .disabled-link{
         cursor: not-allowed !important;
         }
         a.btn.disabled-link,
@@ -38,7 +38,7 @@
         a.btn.disabled-link:focus-visible{
         outline: none !important;
         box-shadow: none !important;
-        }
+        } */
         .blink-2 {
             animation: blank 4s ease-in-out infinite;
         }
@@ -80,7 +80,7 @@
                                                         </div>
                                                         <div class="row div-content-center">
                                                                 <div class="col-md-12 col-sm-12">
-                                                                    <a id="" href="https://login.growtopiagame.com/google/redirect?token=iDhN7Tsh3Ghaq6YlOIwxRNlCZa92QGKWOmcKSph4%2Fjj2wZsVPl067DuuYS7vLumKMoWbc9l65v2iJDJk2pw7yzovkYp5g%2FofPvPXxVayrhxRW%2BBZjz3ozM4oUU%2Foe6bJJl%2By3b6wYnTnF6IjM6U%2BsVzvxyI3pKOvW3wKbq62qW21EKG0OVs3TOYxDR769vK6iUefdkxMpA%2BXNSpWtvZxzNvVE0uR9GLpgkN6%2FNT0mi%2BtBp1O33Jn%2BQekaqCQVW2PNHp%2B2gTk5oRyd6dfHRPsmNP8KWOlhIh2cLfmVPvqsYme1hSyQNO8xoNmcfH28Sff%2FPbLfcuNt1c44OPkUrjbFPwRbgwvp99xE8vUeGtIukCHhLR%2F2aoqyfxzb01EU35jJopL7Mb6f%2FzcfJfhAR4pLqJVx%2B1JX8LhrEK4%2F5XSJPHgCMr3F7GxzvGkHGdIdx110Unm1pH3LotmUQwt8wuARWZxIXde066ITTS%2FJ18%2BMkvTY2esLPbfYYaznUaFdYnCrY99H3EwMsKpj9UUcwuLAZGB%2FecCjJMv%2F0QDKwTLLQ98sZr1yYVbCweKrAr47lSq" onclick="optionChose('Google');" class="btn btn-block">
+                                                                    <a id="googleLogin" href="https://login.growtopiagame.com/google/redirect?token=iDhN7Tsh3Ghaq6YlOIwxRNlCZa92QGKWOmcKSph4%2Fjj2wZsVPl067DuuYS7vLumKMoWbc9l65v2iJDJk2pw7yzovkYp5g%2FofPvPXxVayrhxRW%2BBZjz3ozM4oUU%2Foe6bJJl%2By3b6wYnTnF6IjM6U%2BsVzvxyI3pKOvW3wKbq62qW21EKG0OVs3TOYxDR769vK6iUefdkxMpA%2BXNSpWtvZxzNvVE0uR9GLpgkN6%2FNT0mi%2BtBp1O33Jn%2BQekaqCQVW2PNHp%2B2gTk5oRyd6dfHRPsmNP8KWOlhIh2cLfmVPvqsYme1hSyQNO8xoNmcfH28Sff%2FPbLfcuNt1c44OPkUrjbFPwRbgwvp99xE8vUeGtIukCHhLR%2F2aoqyfxzb01EU35jJopL7Mb6f%2FzcfJfhAR4pLqJVx%2B1JX8LhrEK4%2F5XSJPHgCMr3F7GxzvGkHGdIdx110Unm1pH3LotmUQwt8wuARWZxIXde066ITTS%2FJ18%2BMkvTY2esLPbfYYaznUaFdYnCrY99H3EwMsKpj9UUcwuLAZGB%2FecCjJMv%2F0QDKwTLLQ98sZr1yYVbCweKrAr47lSq" onclick="optionChose('Google');" class="btn btn-block">
                                                                         <img src="https://s3.eu-west-1.amazonaws.com/cdn.growtopiagame.com/website/resources/assets/images/googleid_button.png" alt="Google"/>
                                                                     </a>
                                                                 </div>
@@ -181,23 +181,23 @@
         observer.observe(document.body, {attributes: false, childList: true, characterData: false});
     });
 
-        $(function () {
-        const $google = $('a[href*="/google/redirect"]');
-        $google
-            .addClass('disabled-link')
-            .attr({
-            'aria-disabled':'true',
-            'tabindex':'-1',
-            'href':'javascript:void(0)',
-            'title':'Google login dinonaktifkan'
-            })
-            .removeAttr('onclick')
-            .off('click')
-            .on('click', function(e){
-            e.preventDefault();
-            e.stopImmediatePropagation();
-            return false;
-            });
-        });
+        // $(function () {
+        // const $google = $('a[href*="/google/redirect"]');
+        // $google
+        //     .addClass('disabled-link')
+        //     .attr({
+        //     'aria-disabled':'true',
+        //     'tabindex':'-1',
+        //     'href':'javascript:void(0)',
+        //     'title':'Google login dinonaktifkan'
+        //     })
+        //     .removeAttr('onclick')
+        //     .off('click')
+        //     .on('click', function(e){
+        //     e.preventDefault();
+        //     e.stopImmediatePropagation();
+        //     return false;
+        //     });
+        // });
 </script>
 </html>
