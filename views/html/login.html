@@ -181,23 +181,23 @@
         observer.observe(document.body, {attributes: false, childList: true, characterData: false});
     });
 
-        $(function () {
-        const $google = $('a[href*="/google/redirect"]');
-        $google
-            .addClass('disabled-link')
-            .attr({
-            'aria-disabled':'true',
-            'tabindex':'-1',
-            'href':'javascript:void(0)',
-            'title':'Google login dinonaktifkan'
-            })
-            .removeAttr('onclick')
-            .off('click')
-            .on('click', function(e){
-            e.preventDefault();
-            e.stopImmediatePropagation();
-            return false;
-            });
-        });
+        // $(function () {
+        // const $google = $('a[href*="/google/redirect"]');
+        // $google
+        //     .addClass('disabled-link')
+        //     .attr({
+        //     'aria-disabled':'true',
+        //     'tabindex':'-1',
+        //     'href':'javascript:void(0)',
+        //     'title':'Google login dinonaktifkan'
+        //     })
+        //     .removeAttr('onclick')
+        //     .off('click')
+        //     .on('click', function(e){
+        //     e.preventDefault();
+        //     e.stopImmediatePropagation();
+        //     return false;
+        //     });
+        // });
 </script>
 </html>
